@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTOR DE GASTOS DEL HOGAR</title>
+    <link rel="stylesheet" href="style_1.css">
+</head>
+
+<body>
+    <header>
+        <h1>GESTOR DE GASTOS DEL HOGAR</h1>
+    </header>
+    <nav></nav>
+    <article>
+        <form action="index.html" method="post" class="contenedorGastos" id="calcForm">
+            <div>
+                <fieldset>
+                    <legend>GASTOS FIJOS</legend>
+                    <label>ARQUILER O HIPOTECA:</label>
+                    <input type="number" name="ArquilerHipoteca" id="ArquilerHipoteca" required min="0" max="100000000000" step="1" value ="0">
+                    <label>SERVICIOS:</label>
+                    <input type="number" name="servicios" id="servicios"  required min="0" max="100000000000" step="1" value ="0">
+                    <label>Cuotas escolares o universitarias:</label>
+                    <input type="number" name="cuotas_escolares" id="cuotas_escolares" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Transporte:</label>
+                    <input type="number" name="trasporte" id="trasporte" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Seguros:</label>
+                    <input type="number" name="seguro" id="seguro" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Cuotas de préstamos o deudas:</label>
+                    <input type="number" name="cuotas_prestamos_deudas" id="cuotas_prestamos_deudas" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Cuotas de tarjeta de crédito:</label>
+                    <input type="number" name="cuotas_tarjetas_creditos" id="cuotas_tarjetas_creditos" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Gastos de suscripciones:</label>
+                    <input type="number" name="gastos_suscripciones" id="gastos_suscripciones" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Honorarios fijos (si aplica):</label>
+                    <input type="number" name="honorarios_fijos" id="honorarios_fijos" required min="0" max="100000000000" step="1" value ="0">
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>GASTOS VARIABLES</legend>
+                    <label>alimento:</label>
+                    <input type="number" name="Alimento" id="Alimento" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Medicamentos o salud no planificada:</label>
+                    <input type="number" name="Medicamentos" id="Medicamentos" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Ropa y calzado:</label>
+                    <input type="number" name="Ropa_calzado" id="Ropa_calzado" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Entretenimiento:</label>
+                    <input type="number" name="Entretenimiento" id="Entretenimiento" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Comidas fuera de casa:</label>
+                    <input type="number" name="comidas_fuera" id="comidas_fuera" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Regalos y celebraciones:</label>
+                    <input type="number" name="regalos_celebraciones" id="regalos_celebraciones" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Reparaciones o mantenimiento del hogar o vehículo:</label>
+                    <input type="number" name="reparacion_hogar_vehiculo" id="reparacion_hogar_vehiculo" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Educación adicional o cursos:</label>
+                    <input type="number" name="cursos" id="cursos" required min="0" max="100000000000" step="1" value ="0">
+                    <label>Mascotas (alimentos, veterinario):</label>
+                    <input type="number" name="Mascotas" id="Mascotas" required min="0" max="100000000000" step="1" value ="0">
+                </fieldset>
+            </div>
+            <div>
+                <button type="submit"> Cargar Datos </button>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>RESULTADOS TOTALES</legend>
+                    <table>
+                        <tr>
+                            <td id="TdGastoTotal" >Gastos Totales: <span id="resultado_total"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Gastos Fijos: <span id="resultado_fijos"></span></td>                 
+                        </tr>
+                        <tr> 
+                            <td>Gastos Variables: <span id="resultado_variables"></span></td>
+                        </tr> 
+                    </table>
+                </fieldset>
+            </div>
+        </form>
+            <script>
+    // Función que se ejecuta cuando se envía el formulario
+    function calcularSuma(event) {
+      event.preventDefault(); // Evitar recarga
+
+      // Obtener el formulario
+      const formulario = event.target;
+
+      // Obtener datos del formulario usando FormData
+      const datos = new FormData(formulario);
+
+      // Obtencion valores Gasto Fijos
+      const ArquilerHipoteca = Number(datos.get('ArquilerHipoteca'));
+      const servicios = Number(datos.get('servicios'));
+      const cuotas_escolares = Number(datos.get('cuotas_escolares'));
+      const trasporte = Number(datos.get('trasporte'));
+      const seguro = Number(datos.get('seguro'));
+      const cuotas_prestamos_deudas = Number(datos.get('cuotas_prestamos_deudas'));
+      const cuotas_tarjetas_creditos = Number(datos.get('cuotas_tarjetas_creditos'));
+      const gastos_suscripciones = Number(datos.get('gastos_suscripciones'));
+      const honorarios_fijos = Number(datos.get('honorarios_fijos'));
+
+      // Obtencion valores Gastos Variables
+      const Alimento = Number(datos.get('Alimento'));
+      const Medicamentos = Number(datos.get('Medicamentos'));
+      const Ropa_calzado = Number(datos.get('Ropa_calzado'));
+      const Entretenimiento = Number(datos.get('Entretenimiento'));
+      const comidas_fuera = Number(datos.get('comidas_fuera'));
+      const regalos_celebraciones = Number(datos.get('regalos_celebraciones'));
+      const reparacion_hogar_vehiculo = Number(datos.get('reparacion_hogar_vehiculo'));
+      const cursos = Number(datos.get('cursos'));
+      const Mascotas = Number(datos.get('Mascotas'));
+
+      // Hacer el cálculo
+      const resultado_gasto_fijos = ArquilerHipoteca + servicios + cuotas_escolares + trasporte + seguro + cuotas_prestamos_deudas + cuotas_tarjetas_creditos + gastos_suscripciones +honorarios_fijos;
+      const resultado_gasto_variables = Alimento + Medicamentos + Ropa_calzado + Entretenimiento + comidas_fuera + regalos_celebraciones + reparacion_hogar_vehiculo + cursos + Mascotas;
+
+      // Mostrar resultado en el span
+      document.getElementById('resultado_total').textContent = resultado_gasto_fijos + resultado_gasto_variables;
+      document.getElementById('resultado_fijos').textContent = resultado_gasto_fijos ;
+      document.getElementById('resultado_variables').textContent = resultado_gasto_variables;
+    }
+
+    // Agregar el evento submit al formulario
+    document.getElementById('calcForm').addEventListener('submit', calcularSuma);
+        </script>
+    </article>
+    
+    <footer> LINKS </footer>
+</body>
+</html>
