@@ -8,7 +8,7 @@ h1{
     background-size: auto; 
 }
 body{
-  background: linear-gradient(to bottom, #768ba9, #1a1a2b);
+  background: linear-gradient(to bottom, #166898, #002839);
   min-height: 100vh;
   margin: 0;
 }
@@ -18,25 +18,29 @@ legend {
     font-weight: bold;
     color: #333;
     background-color: #00ffa7;
+    
     padding: 0.5pc ;
     border-radius: 5px;
     border: 0.2pc solid #00000060;
   }
 fieldset {
-    border: 0.25pc,solid, #37373760;
+    border-top:0.25pc  solid  #ffffffa5;
+    border-left:0.25pc  solid  #e3e1e160 ;
+    border-right:0.25pc  solid  #e3e1e160 ;
+    border-bottom:0.25pc  solid  #252525a2;
     padding: 1pc;
-    border-radius: 0.5pc;
+    border-radius: 2pc;
     display: grid;
     width: auto;
     right: auto;
     grid-template-columns: auto;
     grid-auto-rows: auto;
     background-color: #ffffff5d;
-    
+    margin-top: 1pc;
 } 
 input{
     border:0.25pc,solid, #00000060;
-    background:#00a1ff ;
+    background:#00c3ff ;
     border-radius: 0.5pc;
     font-size: 1.2pc;
     transition: transform 0.3s;
@@ -47,47 +51,46 @@ label{
 }
 
 footer{
-    background: #9784ab;
-    border-top-left-radius:2pc;
-    border-top-right-radius: 2pc;
-    padding: 0.5pc;
-    margin: 0pc;
+    background: #1A252F;
+    border-top-left-radius:20pc;
+    border-top-right-radius: 20pc;
+    padding: 5pc;
+    margin-top:5pc;
     text-align: center;
-    border-top:0.25pc  solid  #ffffffa5;   
+    border-top:0.5pc  solid  #3e5872c6;   
     background-size: 100% 100%;
     animation: animacionFooter 2.5s ease forwards;
-    box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #dddddd6f;
+    box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #ffffff6f;
 }
 article{
-    background: #687fb0; 
-    border-radius: 0.5pc;
-    padding: 0.1pc;
+    background: #2C3E50; 
+    border-radius: 2pc;
+    padding: 0.2pc;
     margin: 1pc;
-    border-top:0.25pc  solid  #ffffffa5;
-    border-left:0.25pc  solid  #e3e1e160 ;
-    border-right:0.25pc  solid  #e3e1e160 ;
-    border-bottom:0.25pc  solid  #252525a2;
+    
+    border-top:0.25pc  solid  #81b4e8c6;
+    border-left:0.25pc  solid  #81b5e861 ;
+    border-right:0.25pc  solid  #81b5e861 ;
+    border-bottom:0.25pc  solid  #151e27;
     background-size: 100% 100%;
     animation: animacionArticle 2.5s ease forwards;
     width: auto;
     right: auto;
-    box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #dddddd6f;
+    box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #fffefe6f;
 }
 header{
-    background: #ada5d5;
-    border-bottom-left-radius: 2pc;
-    border-bottom-right-radius: 2pc;
-    padding: 0.1pc;
-    margin:0;
-    border-bottom:0.25pc  solid  #000000a2;
+    background: #2C3E50;
+    border-bottom-left-radius: 20pc;
+    border-bottom-right-radius: 20pc;
+    padding: 4pc;
+    margin-bottom:5pc;
+    border-bottom:1pc  solid  #151e27;
     background-size: 100% 100%;
     animation: animacionHeader 2.5s ease forwards;
     text-align: center;
     box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #dddddd6f;
 }
-#TdGastoTotal{
-    font-size: 1.75pc
-}
+
 table{
     border:0.25pc  solid  #00000060; 
     border-radius: 0.25pc;
@@ -99,19 +102,10 @@ td,th{
     padding: 1pc;
     border:0.25pc  solid  #00000060; 
     border-radius: 0.25pc;
-    font-size: 1.5pc;
+    font-size: 1.25pc;
     background:#00a1ff ;
 }
-div{
-    border-top:0.25pc  solid  #ffffffa5;
-    border-left:0.25pc  solid  #e3e1e160 ;
-    border-right:0.25pc  solid  #e3e1e160 ;
-    border-bottom:0.25pc  solid  #252525a2;
-    border-radius: 1pc;
-    box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #dddddd6f;
-    margin: 1pc;
-    background: #a9a9a9; 
-}
+
 .contenedorGastos{
     display: grid;
     grid-template-columns: auto;
@@ -133,6 +127,7 @@ p{
 }
 
 
+
 .contenedorGastos div:nth-child(3){
     padding: 1pc;
 }
@@ -148,6 +143,7 @@ button{
     cursor: pointer;
     transition: transform 0.3s;
     padding: 1.5pc;
+    margin-top: 1pc;
 }
 
 
@@ -179,6 +175,7 @@ input:active{
     .contenedorGastos{
         grid-template-columns: 50%;
     }
+    
     .contenedorGastos div:nth-child(3){
         grid-column: 1/3;
         grid-row:auto;
@@ -188,28 +185,15 @@ input:active{
         grid-row:auto;
     }
     article{
-        margin: 2pc;
         padding: 1pc;
     }
-}
-@media (width > 60pc){
-    article{
-        margin: 3pc;
-        padding: 1pc;
+    fieldset{
+        box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #fffefe6f;
     }
 }
 
-@media(width > 0pc){
-    fieldset,button{
-        margin-top: 1pc;
-    }
-    article{
-        margin-top: 2pc;
-        margin-bottom: 2pc;
-        padding: 1pc;
-    }
-    
-}
+
+
 
 @keyframes animacionHeader{
     0% 
