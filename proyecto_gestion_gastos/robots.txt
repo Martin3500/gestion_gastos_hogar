@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://plantillagastos.netlify.app/sitemap.xml
