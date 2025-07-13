@@ -11,6 +11,8 @@ body{
   background: linear-gradient(to bottom, #166898, #002839);
   min-height: 100vh;
   margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 legend {
@@ -18,7 +20,6 @@ legend {
     font-weight: bold;
     color: #333;
     background-color: #00ffa7;
-    
     padding: 0.5pc ;
     border-radius: 5px;
     border: 0.2pc solid #00000060;
@@ -47,18 +48,16 @@ input{
 }
 label{
     font-size: 1.2pc;
-    
 }
 
 footer{
-    background: #1A252F;
-    border-top-left-radius:20pc;
+    background: linear-gradient(to bottom, #21303d, #0b0c13);
+    border-top-left-radius: 20pc;
     border-top-right-radius: 20pc;
-    padding: 5pc;
-    margin-top:5pc;
+    margin-top: 5pc;
     text-align: center;
-    border-top:0.5pc  solid  #3e5872c6;   
-    background-size: 100% 100%;
+    padding: 5pc;
+    border-top: 0.5pc  solid  #33495e;   
     animation: animacionFooter 2.5s ease forwards;
     box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #ffffff6f;
 }
@@ -67,7 +66,6 @@ article{
     border-radius: 2pc;
     padding: 0.2pc;
     margin: 1pc;
-    
     border-top:0.25pc  solid  #81b4e8c6;
     border-left:0.25pc  solid  #81b5e861 ;
     border-right:0.25pc  solid  #81b5e861 ;
@@ -79,7 +77,7 @@ article{
     box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #fffefe6f;
 }
 header{
-    background: #2C3E50;
+    background:  linear-gradient(to top, #2C3E50, #141622);
     border-bottom-left-radius: 20pc;
     border-bottom-right-radius: 20pc;
     padding: 4pc;
@@ -88,7 +86,7 @@ header{
     background-size: 100% 100%;
     animation: animacionHeader 2.5s ease forwards;
     text-align: center;
-    box-shadow: 0pc 1pc 0.5pc #0000006f,0pc 0pc 2pc #dddddd6f;
+    box-shadow: 0pc 1pc 0.5pc #0000006f;
 }
 
 table{
@@ -146,9 +144,6 @@ button{
     margin-top: 1pc;
 }
 
-
-
-
 button:hover {
       background:radial-gradient(#ffffff,#f2ff00);
       transform: scale(1.005);
@@ -168,6 +163,8 @@ input:active{
     box-shadow: 0pc 0pc 1pc #fff700,0pc 0pc 2pc #ffffff;
     transform: scale(1.020);
 }
+
+
 @media (width > 45pc){
     div{
         padding: 1pc;
